@@ -1,0 +1,102 @@
+Exercise 1: 
+iterate through the messages in input
+for each message:
+if(len(message)<60): 
+calculate the vertical start point: 25/2
+calculate the start point by doing:(60 - len(message))/2
+Make sure that the robot starting to type the messages at these two starting postions, including the spaces, and when it finished it, end this current loop. 
+else if (len(message)>60):
+do len(message)%60, to see if the result is 0 or not; 
+then calculate the vertical starting position: (25- numberOfLines)/2
+if it is 0:
+we will have numberOfLines = len(message)/60
+if it is not 0: 
+we will have numberOfLines = (len(message)/60) + 1 
+for every line except for the last line: type from the begining to the end including spaces
+then for the last line: 
+we calculate the len of the last line: len(message)%60
+then we repeat the process of the condition when the length is less than 60 
+
+
+Exercise 2: 
+define 2 input integer as num1 and num2 
+if num1 > num2:
+calculate the factor  = num1/num2
+remainder = num1 - num2*factor
+else:
+factor = num2/num1
+remainder = num2 - num1*factor
+
+Exercise 3: 
+given 3 side lengths of triangle, a, b, c 
+if a = b = c: it is equilateral triangle 
+if(a = b or b = c or a = c): it is isosceles triangle
+if(a != b and b != c and a != c): it is a scalene triangle 
+if (a square + b square = c square): it is right triangle
+if(a square + b square > c square ): it is an obtuse triangle 
+if(a square + b square < c square) : it is an acute triangle
+
+Exercise 4: 
+Record the time once start playing the new music 
+write down caller's name, recorde the time he/she called
+use True(answered correctly) and False(answered incorrectly) to label each caller' answer 
+At the end of this 8-hour shift, take out those callers who did not answer correctly
+calculate the lap between the start time of music and the call time
+Sort the lap from low to high, and pick the first caller after sorting 
+
+Exercise 5: 
+first, go through all of the dots
+lable each dot with coordinates in this format: 1(x,y)
+save the dot and its coordinate to dictionary or hashset 
+
+when sending the dots to teammates:
+retrieve the dots in increasing order, with its coordinate 
+the formats of the info I will send out: 1(x1,y1),2(x2,y2),3(x3,y3) etc
+
+protocol:
+1. each time I will transmit 8 dots with each of its coordinate to my teammmate
+2. teammate will draw each dot based on its coordinate 
+3. teammate will connect each dot in natural orders: 1,2,3,4,5 etc 
+
+
+
+
+
+Exercise 6: 
+for example, there are 4 people(a,b,c,d) at the party, and only one person is celebrity 
+start asking a if a knows b 
+if a knows b, a would not be a celebrity
+stop asking a any question
+if a doesn't know b: keep asking a if a knows c/d, and stop asking if a knows anyone 
+repeat this process until locating the person who does not know anybody 
+
+Exercise 7: 
+use two arrays to store these 2 sets of cards 
+checking flush: 
+sort the 2 arrays according to suite 
+if there is only 1 suite: it is flush 
+checking straight: 
+sort the 2 arrays according to the rankings(2345678910JQKA)
+remember the highest card
+if the cards are ranked increasingly without an interrupt, it is a straight
+checking straight flush: 
+if both straight and flush: straight flush 
+checking royal flush: 
+if straight & flush & highest card is A: royal flush 
+checking four of a kind: 
+since already have the cards sorting by ranks, just check if we have 4 cards belong to the same rank 
+checking full house: 
+if 3 cards belong to the same rank, and the ramining 2 cards both belong to a different rank 
+checking three of a kind: 
+if 3 cards belong to the same rank, and it is not a full house, then it is three of a kind 
+checking 2 pairs: 
+if 2 cards are same rank, and another 2 cards are same ranks that different from the first rank 
+checking 1 pair: 
+if 2 cards are same rank
+checking for high card: 
+if did not meet any above condition, then it is high card
+
+at the end, the program will output the categories of these 2 set of cards
+then use the category as a key, to look up the corresponding rank in ranking systems 
+in the ranking systems, royal flush is 1, and high card is 10 
+compare the rankings and the set with smaller ranking wins 
