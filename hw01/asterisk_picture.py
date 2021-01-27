@@ -1,0 +1,22 @@
+def treeShape():
+    print('           *')
+    print('          ***')
+    print('         ****')
+    print('        ******')
+    print('      **********')
+    print('        ******')
+    print('      **********')
+    print('    **************')
+    print('   *****************')
+    print('          **')
+    print('          **')
+    print('          **')
+    print('          **')
+    print('          **')
+    print('          **')
+    print('          **')
+    print('          **')
+    print('          **')
+
+
+treeShape()
