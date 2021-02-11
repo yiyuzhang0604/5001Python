@@ -1,0 +1,37 @@
+1. True, false, 0, 1 
+2. The term Boolean comes from the name of the British mathematician George Boole. 
+3. True = 1
+4. False = 0 
+5. True, becasue it is an unempty value 
+6. 
+a) True
+b) True
+c) False
+d) True
+e) False
+f) True
+g) True 
+h) False
+i) False 
+j) True
+k) True 
+l) False 
+
+7) 
+a)True 
+b)False 
+c)False
+d)True
+e)False 
+f)True
+g)False
+h)True
+i) True
+j)True
+k)False
+l)True
+m)False
+n)True
+o)True
+p)
+
