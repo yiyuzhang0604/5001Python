@@ -1,3 +1,5 @@
+Name: Yiyu Zhang
+Github: https://github.ccs.neu.edu/CS-5001-SEA-Spring2021/student-YiyuZhang
 1. True, false, 0, 1 
 2. The term Boolean comes from the name of the British mathematician George Boole. 
 3. True = 1
@@ -33,5 +35,15 @@ l)True
 m)False
 n)True
 o)True
-p)
+p)True
+q)False
+r)True
+s)False
+t)True
+u)True
+v)False
+w)False 
+x)True
+y)True
+z)False
 
