@@ -1,0 +1,8 @@
+1) yes
+2) yes
+3) yes
+4) yes 
+5) no, the proc() takes 2 parameters, but when the proc() miss 1 parameter when being called
+6) no, the proc() only takes 1 parameter, but there are 2 parameters when calling the proc function 
+7) yes 
+
