@@ -8,5 +8,5 @@ class Die:
 
     def roll(self):
         """ behavior, roll a random number from 1 to 6 """
-        dice_range = (1, 6)
-        self.current_value = random.randint(*dice_range)
+        DICE_RANGE = (1, 6)
+        self.current_value = random.randint(*DICE_RANGE)

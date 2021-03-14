@@ -15,12 +15,19 @@ class GameController:
         print("")
         self.shooter.roll_dice()
         self.point = self.shooter.current_value()
+        FIRST_ROUND_WIN = 7
+        FIRST_ROUND_WIN2 = 11
+        FIRST_ROUND_LOSE = 2
+        FIRST_ROUND_LOSE2 = 3
+        FIRST_ROUND_LOSE3 = 12
+        LOSE = 7
 
-        if(self.point == 7 or self.point == 11):
+        if(self.point == FIRST_ROUND_WIN or self.point == FIRST_ROUND_WIN2):
             print(f"You rolled {self.point}. You win!")
             return
 
-        if(self.point == 2 or self.point == 3 or self.point == 12):
+        if(self.point == FIRST_ROUND_LOSE or self.point == FIRST_ROUND_LOSE2 or
+                self.point == FIRST_ROUND_LOSE3):
             print(f"You rolled {self.point}. You lose.")
             return
 
@@ -32,7 +39,7 @@ class GameController:
             input("Press enter to roll the dice...")
             self.shooter.roll_dice()
 
-            if(self.shooter.current_value() == 7):
+            if(self.shooter.current_value() == LOSE):
                 print(f"You rolled {self.shooter.current_value()}. You lose.")
                 next = False
                 return
