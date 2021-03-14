@@ -1,3 +1,5 @@
+# Name: Yiyu Zhang
+# Github: https://github.ccs.neu.edu/CS-5001-SEA-Spring2021/student-YiyuZhang/tree/master/lab07
 from game_controller import GameController
 
 
@@ -10,6 +12,7 @@ def rules():
           "If you roll anything else, that's your 'point and\n"
           "you keep rolling until you either roll your point\n"
           "again (win) or roll a 7 (lose)")
+    print("")
 
 
 def main():

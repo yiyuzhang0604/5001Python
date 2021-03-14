@@ -11,7 +11,8 @@ class GameController:
     def start_play(self):
         """ Start the game """
         # First round
-        print("Press enter to roll the dice...")
+        start = input("Press enter to roll the dice...")
+        print("")
         self.shooter.roll_dice()
         self.point = self.shooter.current_value()
 
