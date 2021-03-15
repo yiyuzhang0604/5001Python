@@ -1,3 +1,6 @@
+# Name: Yiyu Zhang
+# Github: https://github.ccs.neu.edu/CS-5001-SEA-Spring2021/student-YiyuZhang/tree/master/hw07
+
 def main():
     take_input()
 
