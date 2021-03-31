@@ -33,6 +33,9 @@ class WordLadder:
         if (len(self.w1) != len(self.w2)):
             return None
 
+        if self.w1 not in self.wordSet or self.w2 not in self.wordSet:
+            return None
+
         self.seen_set.add(self.w1)
 
         while self.queue.isEmpty() is not True:
