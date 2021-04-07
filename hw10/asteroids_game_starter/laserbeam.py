@@ -26,6 +26,7 @@ class LaserBeam(FlyingObject):
         self.lifespan = 100
 
     def draw_me(self):
+        """ draw the laserbeam"""
         if(self.lifespan == 0):
             background(0)
 

@@ -86,6 +86,7 @@ class GameController:
             self.spaceship.control('keyup')
 
     def do_intersections(self):
+        """ function that handels the situation when beams hit the asteroids"""
         # ======================================================
         # TODO: Problem 4, Part 1: Intersections
         # Here's where you'll probably want to check for intersections
@@ -138,6 +139,7 @@ class GameController:
                     self.spaceship_hit = True
 
     def blow_up_asteroid(self, i, j):
+        """ split the large asteroid into smaller ones"""
         # ======================================================
         # TODO: Problem 4, Part 2: Asteroid blow-up
 
