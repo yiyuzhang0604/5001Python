@@ -1,0 +1,33 @@
+disk_test.py:
+
+def test_constructor():
+    d = Disk(50,-45,0)
+    assert a.x == 50 and \
+        a.y == -45 and \
+        a.col == 0 and \
+        a.RADIUS == 95 
+
+
+board_test.py:
+
+def test_constructor():
+    b = Board(2,2)
+    assert b.row_num == 2 and \
+        b.col_num == 2 and \
+        b.disk = Disk(0,0,12)
+
+game_controller_test.py:
+
+def test_constructor():
+    gc = GameController()
+    assert gc.board == Board(2,2) and \
+        gc.disk == Disk(0,10,12) and \
+        gc.current_width == [150,150] and \
+        gc.COUNT == 4
+        
+
+
+    
+
+
+    
