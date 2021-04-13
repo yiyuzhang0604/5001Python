@@ -1,3 +1,5 @@
+Summary of testing: all pass 
+
 disk_test.py:
 
 def test_constructor():
