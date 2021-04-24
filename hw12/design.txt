@@ -1,0 +1,143 @@
+# Name: Yiyu Zhang
+# GitHub: https://github.ccs.neu.edu/CS-5001-SEA-Spring2021/student-YiyuZhang
+
+class Board:
+attributes: 
+self.grid = [[None] * self.row_num for _ in range(self.col_num)]
+self.col_num: number of columns 
+self.row_num: number of rows
+self.player: 1 
+self.disk = Disk()
+
+
+methods:
+draw_me(self): draw the board 
+
+# future implementation:
+1. update player's turns in list of list: 
+- if player1 put a disk on [0,1],grid[0][1] = 1 
+- if player2 put a disk on [0,0], grid[0][0] = 2
+- based on the number on the grid, if grid[i][j] == 1, draw yellow disk
+
+2. check winning situation:
+- 4 in a row: 
+for i in range(row_num):
+    for j in range(col_num):
+        if i + 3 <= row_num and j - 3 >= 0:
+            if grid[i][j] == 1 and grid[i+1][j] == 1 and grid[i+2][j] == 1 and grid[i+3][j] == 1:
+                player1 wins
+                    
+
+- 4 in a column 
+
+-4 in diagional:
+for i in range(row_num):
+    for j in range(col_num):
+        if i + 3 <= row_num and j - 3 >= 0:
+        if grid[i][j] == 1 and grid[i+1][j-1] == 1 and grid[i+2][j-2]==1 and grid[i+3][j-3] == 1:
+            player1 wins
+
+class Disk: 
+self.x : disk's x position 
+self.y: disk's y position
+self.col: the number representation of different color 
+self.RADIUS = 95 
+
+methods:
+
+draw_me(self,col,pressed_x,y):
+# draw the disk with passsed in color and posistion 
+fill(255,col,0)
+noStroke()
+ellipse(pressed_x,y,self.RADIUS,self.RADIUS)
+
+
+Class GameController:
+self.board = Board(row_num,col_num)
+self.current_width = [150,150]
+# lowest y position for each column 
+self.COUNT = 4
+
+methods:
+
+update(self):
+# display the board, and the disk on every frame
+if the game is not over:
+    if player1:
+        col = 0 
+    else:
+        col = 203 
+
+    if mousePressed:
+        if mouseY < 100:
+            pressed = True
+            # when have a mouse press, set the pressed = True, used to check the mouse release 
+                handle_mouse_press(mouseX,mouseY,col)
+
+    elif pressed:
+        if mouseY < 100:
+            if d is not None:
+                handle_mouse_press(d)
+            if len(coordinates) % 2 == 0:
+                player1 = true 
+            else:
+                player1 = False 
+        pressed = False
+        # reset the pressed 
+    
+    display all the disk in the coordinates:
+    self.stay()
+    self.check_over()
+    # check if the game is over or not 
+    self.board.draw_me()
+
+
+check over(self):
+if len(coordinates) == self.Count:
+    game is over 
+    print the text 
+
+
+stay(self,disk):
+""" have the disk stay on the board after dropping"""
+
+convert(self,pressed_x):
+""" from x position, tell which column the disk is located"""
+
+
+handle_mouse_press(self, mouse_x):
+""" initialize a disk object with the x position comes from mouse_x"""
+if mouseY <= 100:
+    initialize a disk with certain location 
+else:
+    initialize a disk with other locations
+
+if self.convert(d.x) == 1:
+    x = 1
+else:
+    x = 0 
+
+limit = self.current_width[x]
+if limit > 0:
+    d.draw_me(col,d.x,d.y)
+
+return d
+
+handle_mouse_release(self,d):
+""" handle the dropping disk"""
+d.y = 45 
+if self.convert(d.x) == 1:
+    x = 1
+else:
+    x = 0 
+
+limit = self.current_width[x]
+if limit > 0:
+    while d.y < limit:
+        d.draw_me(col,d.x,d.y)
+    coordinates.append(d)
+    self.current_width[x] -= 100
+    # update new limit 
+
+stay(self,disk):
+    
