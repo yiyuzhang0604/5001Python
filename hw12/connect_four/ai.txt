@@ -1,0 +1,19 @@
+* Did you attempt to make your computer player very smart -- i.e., do something more clever than just pick a random legal move?
+    Yes, I tried to implement a function based on player's last disk location, so that each time the computer can place a disk around that location, to stop the user to win the game. 
+    However, due to the short of time, I did not implement that function successfully. 
+
+* If so, were you able to accomplish this? Is your computer player as smart as you would like?
+    No. 
+
+* How did you determine which piece to play next? Tell us about your “pick next move” algorithm
+    I used random.randit method to help me to generate two random number for x position and y posistion.
+    If on that pisition, the board is clear, the computer will place a disk on it. 
+
+* How often did your computer program beat you, or your friends, or whoever tested it out for you?
+    Really depends. 
+    
+* How would you improve it in the future?
+    There is a lot of things I would like to improve in the future:
+    1. Finish the ai algorithm so that the computer can place a disk based on the strategy describe above
+    2. Used TensorFlow to analyze users' playing behaviors, and the AI can apply different playing strategies when playing against different players
+    3. With more games played, the AI should be able to improve its playing strategies by implementing a machine learning model. 
