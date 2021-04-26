@@ -10,13 +10,14 @@ gc = GameController(ROW_NUM, COL_NUM)
 
 def setup():
     size(SPACE['w'],SPACE['h'])
-    #gc.time = second()
     gc.setup()
 
 
 def draw():
     BACKGROUND = -1
-    TRANSLATE = (10,130)
+    X = 10
+    Y = 130
+    TRANSLATE = (X, Y)
     background(BACKGROUND)
     translate(*TRANSLATE)
     gc.update()
