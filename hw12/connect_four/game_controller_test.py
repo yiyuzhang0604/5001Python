@@ -24,13 +24,14 @@ def test_constructor():
     assert gc.players == dict()
 
 
-def test_computer():
-    next_x = random.randint(0, gc.COL_NUM-1)
-    next_y = random.randint(0, gc.ROW_NUM-1)
-    while gc.board.grid[next_y][next_x] is not None:
-        next_x = random.randint(0, gc.COL_NUM-1)
-        next_y = random.randint(0, gc.ROW_NUM-1)
-    assert gc.board.grid[next_x][next_y] is None
+def test_computer_make_move():
+    next_x = random.randint(0, gc.ROW_NUM-1)
+    next_y = random.randint(0, gc.COL_NUM-1)
+    if gc.check_over() is False:
+        while gc.board.grid[next_y][next_x] is not None:
+            next_x = random.randint(0, gc.ROW_NUM-1)
+            next_y = random.randint(0, gc.COL_NUM-1)
+        assert gc.board.grid[next_x][next_y] is None
 
     Y = -45
     COL = 203
@@ -38,6 +39,11 @@ def test_computer():
     assert d.x == gc.X_COORDINATES[next_x]
     assert d.y == Y
     assert d.col == COL
+    assert gc.is_player_turn is True
+
+
+def test_player_make_move():
+    assert gc.check_over() is False
     assert gc.is_player_turn is True
 
 
@@ -53,3 +59,82 @@ def test_update():
         assert col == COL2
         gc.time -= 1
         assert gc.time == TIME
+
+
+def test_check_row_win():
+    gc.board.grid = [[None, None, 1, 1, 1, 1, None],
+                     [None, None, None, None, None, None, None],
+                     [None, None, None, None, None, None, None],
+                     [None, 2, 2, None, None, None, None],
+                     [None, None, None, None, None, None, None],
+                     [None, None, None, None, None, None, None]]
+    gc.check_row_win()
+    assert gc.player1_win is True
+
+    gc.board.grid = [[None, None, None, 2, None, None, None],
+                     [None, None, None, None, None, None, None],
+                     [None, 1, None, None, None, None, None],
+                     [None, None, None, None, None, None, None],
+                     [None, None, None, 1, 2, 2, None],
+                     [None, None, None, 1, 1, 1, None]]
+    gc.check_row_win()
+    assert gc.player2_win is False
+
+
+def test_check_column_win():
+    gc.board.grid = [[None, None, 1, 1, 1, None, None],
+                     [1, None, None, None, None, None, None],
+                     [1, None, None, None, None, None, None],
+                     [1, 2, 2, None, None, None, None],
+                     [1, None, None, None, None, None, None],
+                     [None, None, None, None, None, None, None]]
+    gc.check_column_win()
+    assert gc.player1_win is True
+
+    gc.board.grid = [[None, None, None, 2, None, None, None],
+                     [None, None, None, None, None, None, None],
+                     [None, 1, 2, None, None, None, None],
+                     [None, None, 2, None, None, None, None],
+                     [None, None, 2, 1, 2, 2, None],
+                     [None, None, 2, 1, 1, 1, None]]
+    gc.check_column_win()
+    assert gc.player2_win is True
+
+
+def test_check_diagional_win():
+    gc.board.grid = [[None, None, 1, 1, 1, None, None],
+                     [None, None, None, 1, None, None, None],
+                     [1, None, 1, None, None, None, None],
+                     [1, 1, 2, None, None, None, None],
+                     [1, None, None, None, None, None, None],
+                     [None, None, None, None, None, None, None]]
+    gc.check_diagional_win()
+    assert gc.player1_win is True
+
+    gc.board.grid = [[None, None, None, 2, None, None, None],
+                     [None, None, None, None, None, None, None],
+                     [None, 1, 2, None, None, 2, None],
+                     [None, None, 2, None, 2, None, None],
+                     [None, None, 2, 2, 2, None, None],
+                     [None, None, 2, None, 1, 1, None]]
+    gc.check_diagional_win()
+    assert gc.player2_win is True
+
+
+def test_check_over():
+    if gc.player1_win:
+        assert gc.check_over() is True
+    elif gc.palyer2_win:
+        assert gc.check_over() is True
+    else:
+        assert gc.check_over() is False
+
+
+def test_convert():
+    pressed_x = 50
+    assert gc.convert(pressed_x) == 0
+
+
+def test_convert_y():
+    y = 50
+    assert gc.convert_y(y) == 0
